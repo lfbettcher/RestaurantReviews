@@ -12,6 +12,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.security.Timestamp;
+import java.util.Date;
 
 
 @Getter
@@ -38,9 +39,9 @@ public class Review {
     @Column(name = "review")
     private String review;
 
-    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
-    private Timestamp createdAt;
+    private Date createdAt;
 
     @ManyToOne
     @JoinColumn(name = "restaurant_id", nullable = false)
