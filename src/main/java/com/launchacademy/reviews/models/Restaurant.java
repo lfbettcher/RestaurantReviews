@@ -4,20 +4,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
-@Entity
-@Table(name = "restaurants")
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
+@Table(name = "restaurants")
 public class Restaurant {
     @Id
-    //@SequenceGenerator
-    //@GeneratedValue
+    @SequenceGenerator(name = "restaurant_generator", sequenceName = "restaurants_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "restaurant_generator")
     @Column(name = "id", nullable = false, unique = true)
     private Integer id;
 
@@ -42,18 +46,23 @@ public class Restaurant {
     @Column(name = "address")
     private String address;
 
-    @NotBlank
+    @NotNull
+    @Range(min = 1, max = 13)
     @Column(name = "open_time", nullable = false)
     private Integer openTime;
 
-    @NotBlank
+    @NotNull
+    @Range(min = 1, max = 13)
     @Column(name = "close_time", nullable = false)
     private Integer closeTime;
 
-
-    //???
     @ManyToOne
-    @JoinColumn(name = "category_id")
-    @JsonIgnoreProperties("categories")
-    private Category categories;
+    @JoinColumn(name = "category_id", nullable = false)
+    @JsonIgnoreProperties("restaurants")
+    private Category category;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("restaurant")
+    List<Review> reviews = new ArrayList<>();
+
 }
