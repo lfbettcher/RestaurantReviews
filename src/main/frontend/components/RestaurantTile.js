@@ -25,7 +25,7 @@ const RestaurantTile = (props) => {
       <p>{address}</p>
       <p>{openTime}</p>
       <p>{closeTime}</p>
-      <p>{category}</p>
+      <p>{category.name}</p>
     </>
   )
 }

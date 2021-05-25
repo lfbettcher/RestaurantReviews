@@ -1,8 +1,11 @@
 package com.launchacademy.reviews.services;
 
+import com.launchacademy.reviews.models.Restaurant;
 import com.launchacademy.reviews.repositories.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class RestaurantService {

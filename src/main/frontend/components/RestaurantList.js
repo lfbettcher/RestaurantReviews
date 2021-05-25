@@ -7,11 +7,7 @@ const RestaurantList = () => {
 
   const getRestaurants = async () => {
     const data = await DBUtils.fetchData(`/api/v1/restaurants`)
-    if (typeof data === "object") {
-      //redirect to 404
-    } else {
-      setRestaurants(data)
-    }
+    setRestaurants(data)
   }
 
   useEffect(() => {
