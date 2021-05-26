@@ -34,8 +34,8 @@ public class RestaurantService {
     }
 
     public ResponseEntity<Map<String, String>> persistRestaurant(Restaurant restaurant) {
-        Category category = categoryRepository.findByName(restaurant.getCategory().getName().toLowerCase());
-        if(category == null){
+        Category category = categoryRepository.findByNameIgnoreCase(restaurant.getCategory().getName());
+        if (category == null) {
             category = new Category();
             category.setName(restaurant.getCategory().getName().toLowerCase());
             categoryRepository.save(category);
