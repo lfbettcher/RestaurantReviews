@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .main-page {
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    box-sizing: border-box;
+  }
+  
+  /********* main-header *****/
+  
+  .main-header {
+    height: 300px;
+    background-image: url(https://shapeyourfutureok.com/wp-content/uploads/2018/10/25698-TSET-19-04-SYF-Website-Refresh_Header_5FoodGroups_F.jpg);
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .title{
+    padding: 100px;
+    text-align:center;
+    font-family: sans-serif;
+      font-size:50px;
+      font-weight: bold;
+    color:#fff;
+    text-shadow: 2px 2px 5px #333;
+  }
+  
+  .group{
+    margin:-50px;
+    text-align:center;
+    font-family: sans-serif;
+      font-size:20px;
+      font-weight: bold;
+    color:#fff;
+    text-shadow: 2px 2px 5px #333;
+  }
+  
+  .menu-list {
+    position: relative;
+    width: 960px;
+    box-sizing: border-box;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    margin-bottom: 53px;
+    font-family: sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+  }
+  
+  .menu-list .menu-list__item {
+    display: inline-block;
+    font-size: 2rem;
+  }
+  
+  .menu-list .menu-list__link {
+    text-decoration: none;
+    color: #666;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .menu-list .menu-list__link:hover {
+    padding-bottom: 7px;
+    border-bottom: 3px solid #d32323;
+    cursor: pointer;
+  }
+  
+  /********* restaurant-list *****/
+  .main-content {
+    width: 960px;
+    margin: 0 auto;
+  }
+  
+  .main-title {
+    text-align: center;
+    font-family: sans-serif;
+      font-size: 40px;
+      font-weight: bold;
+    margin: 1em;
+    color: #666;	
+  }
+  .restaurants {
+    line-height: normal;
+    margin-bottom: 25px;
+  }
+  
+  .restaurants__row {
+    margin: 0 -16px;
+  }
+  
+  .restaurants__col {
+    display: inline-block;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    margin: 16px;
+    margin-top: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+    user-select: none;
+    height: 350px;
+    vertical-align: top;
+  }
+  
+  .img-link{
+    width:294px;
+    height:180px;
+  }
+  
+  .restaurants-container {
+    font-size: 14px;
+      font-family: sans-serif;
+      font-stretch: extra-condensed;
+      padding: 12px;
+  }
+  
+  .restaurants__name {
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .restaurants__name-link {
+    font-family: sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: #0073bb;	
+      text-decoration: none;
+  }
+  
+  .restaurants__name-link:hover {
+     padding-bottom: 3px;
+    border-bottom: 3px solid #d32323;
+    cursor: pointer;
+  }
+  
+  .restaurants-info {
+    color: #333;
+      margin-bottom: 7px;
+  }
+  
+  /********* restaurant-show *****/
+  
