@@ -26,7 +26,7 @@ const RestaurantForm = () => {
   }
 
   const handleSuccess = () => {
-    setSuccess(false)
+    setSuccess(true)
   }
 
   const handleSubmit = async (e) => {
@@ -48,7 +48,7 @@ const RestaurantForm = () => {
   }
 
   if (success) {
-    return <Redirect push to='/not_found' />
+    return <Redirect push to='/restaurants' />
   }
 
   return (
