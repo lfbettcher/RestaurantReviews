@@ -16,16 +16,22 @@ const RestaurantTile = (props) => {
 
   return (
     <>
-      <h1>
+      {/* <h1>
         <Link to={`/restaurants/${id}`}>{name}</Link>
       </h1>
-      <img src={imgUrl} alt={name} />
-      <p>{websiteUrl}</p>
-      <p>{phoneNumber}</p>
-      <p>{address}</p>
-      <p>{openTime}</p>
-      <p>{closeTime}</p>
-      <p>{category.name}</p>
+      <img src={imgUrl} alt={name} /> */}
+      <div className="restaurants__col">
+        <img className="img-link" src={imgUrl}></img>
+        <div className="restaurants-container">
+          <span className="restaurants__name"><Link to={`/restaurants/${id}`} className="restaurants__name-link">{name}</Link></span>
+          <a href={websiteUrl}>{websiteUrl}</a>
+          {/* <p>{websiteUrl}</p> */}
+          <p>{phoneNumber}</p>
+          <p>{address}</p>
+          <p>Hours: {openTime} to {closeTime}</p>
+          <p>{category.name}</p>
+        </div>
+      </div>
     </>
   )
 }

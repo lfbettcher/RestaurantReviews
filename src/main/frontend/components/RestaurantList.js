@@ -19,10 +19,14 @@ const RestaurantList = () => {
   })
 
   return (
-    <div>
-      <h1>Restaurants</h1>
-      <hr />
-      {restaurantTiles}
+    <div className="main-content">
+      <h1 className="main-title">Restaurants</h1>
+      {/* <hr /> */}
+      <section className="restaurants">
+        <div className="restaurants__row">
+          {restaurantTiles}
+        </div>
+      </section>
     </div>
   )
 }
