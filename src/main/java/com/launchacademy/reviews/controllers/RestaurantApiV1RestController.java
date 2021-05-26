@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -35,12 +38,19 @@ public class RestaurantApiV1RestController {
     }
 
     @PostMapping("/restaurants")
-    public void createRestaurantPosting(@Valid @RequestBody Restaurant restaurant, BindingResult bindingResult){
-        System.out.println(restaurant);
+    public ResponseEntity<Map<String, String>> createRestaurantPosting(@Valid @RequestBody Restaurant restaurant, BindingResult bindingResult){
+        Map<String, String> errors = new HashMap<>();
+
+        //Structure errors for form and send back to React
         if(bindingResult.hasErrors()){
-            System.out.println(bindingResult.getAllErrors());
-        } else {
-            System.out.println("good");
+            List<ObjectError> errorObjects = bindingResult.getAllErrors();
+            errorObjects.forEach(error -> {
+                errors.put(error.getCodes()[0].split("\\.")[2], error.getDefaultMessage());
+            });
+
+            return new ResponseEntity<>(errors, HttpStatus.UNPROCESSABLE_ENTITY);
         }
+
+        return restaurantService.persistRestaurant(restaurant);
     }
 }

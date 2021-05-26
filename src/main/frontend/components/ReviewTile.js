@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react"
 
-const ReviewTile = () => {
+const ReviewTile = (props) => {
+  const { reviewerName, starRating, review, restaurant } = props.review
   return (
-    <div>
-      
-    </div>
+    <>
+      <p>{reviewerName}</p>
+      <p>{starRating}</p>
+      <p>{review}</p>
+      <p>{restaurant && restaurant.name}</p>
+    </>
   )
 }
 

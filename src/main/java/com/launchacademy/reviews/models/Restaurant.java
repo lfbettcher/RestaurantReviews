@@ -63,6 +63,7 @@ public class Restaurant {
     @JsonIgnoreProperties("restaurants")
     private Category category;
 
+    @ToString.Exclude
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("restaurant")
     List<Review> reviews = new ArrayList<>();
