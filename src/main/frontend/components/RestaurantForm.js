@@ -55,7 +55,7 @@ const RestaurantForm = () => {
     <div className="form-main" >
       <h1 className="main-title">Add a Restaurant</h1>
       <div className="form-div">
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form-wrapper" onSubmit={handleSubmit}>
           <div className="form-input">
             <TextInput
               label='name'
@@ -65,7 +65,6 @@ const RestaurantForm = () => {
               error={errors.name}
             />
           </div>
-          <br />
           <div className="form-input">
             <TextInput
               label='imgUrl'
@@ -75,7 +74,6 @@ const RestaurantForm = () => {
               error={errors.imgUrl}
             />
           </div>
-          <br />
           <div className="form-input">
             <TextInput
               label='websiteUrl'
@@ -85,7 +83,6 @@ const RestaurantForm = () => {
               error={errors.websiteUrl}
             />
           </div>
-          <br />
           <div className="form-input">
             <TextInput
               label='phoneNumber'
@@ -95,7 +92,6 @@ const RestaurantForm = () => {
               error={errors.phoneNumber}
             />
           </div>
-          <br />
           <div className="form-input">
             <TextInput
               label='address'
@@ -105,7 +101,6 @@ const RestaurantForm = () => {
               error={errors.address}
             />
           </div>
-          <br />
           <div className="form-input">
             <TextInput
               label='category'
@@ -115,7 +110,6 @@ const RestaurantForm = () => {
               error={errors.category}
             />
           </div>
-          <br />
           <div className="form-input">
             <TextInput
               label='openTime'
@@ -125,7 +119,6 @@ const RestaurantForm = () => {
               error={errors.openTime}
             />
           </div>
-          <br />
           <div className="form-input">
             <TextInput
               label='closeTime'
@@ -135,8 +128,7 @@ const RestaurantForm = () => {
               error={errors.closeTime}
             />
           </div>
-          <br />
-          <div className="submit">
+          <div className="form-submit">
             <input type='submit' value='Submit' id="button-blue" />
             <div className="ease" />
           </div>
