@@ -225,7 +225,7 @@ input:focus, textarea:focus {
 	padding-top:0px;
 }
 
-.form-div {
+/* .form-div {
 	background-color:rgba(72,72,72,0.4);
 	padding-left:35px;
 	padding-right:35px;
@@ -239,12 +239,32 @@ input:focus, textarea:focus {
 	margin-left: -235px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
+} */
+
+.form-div {
+  background-color: rgba(72,72,72,0.4);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  width: 960px;
+  margin: 30px auto;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
 }
 
-.form-input{
+/* .form-input{
 	padding:3px;
   width:380px;
   position:center center;
+} */
+
+.form-input {
+  padding: 3px;
+  width: 420px;
+  margin: 10px 10px;
+  position: center center;
+  display: inline-block;
 }
 
 .feedback-input {
@@ -328,4 +348,12 @@ input:focus, textarea:focus {
     font-family: sans-serif;
     font-weight: bold;
     color: #666;
+}
+
+.form-submit{
+margin: 20px 20px;
+}
+
+.form-wrapper{
+  margin:-20px;
 }
