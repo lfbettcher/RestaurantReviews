@@ -49,12 +49,12 @@ public class Restaurant {
     private String address;
 
     @NotNull
-    @Range(min = 0, max = 24)
+    @Range(min = 0, max = 23)
     @Column(name = "open_time", nullable = false)
     private Integer openTime;
 
     @NotNull
-    @Range(min = 0, max = 24)
+    @Range(min = 0, max = 23)
     @Column(name = "close_time", nullable = false)
     private Integer closeTime;
 
