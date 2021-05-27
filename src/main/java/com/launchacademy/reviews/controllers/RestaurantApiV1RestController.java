@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/restaurants")
 public class RestaurantApiV1RestController {
 
     private final RestaurantService restaurantService;
@@ -25,20 +25,20 @@ public class RestaurantApiV1RestController {
         this.restaurantService = restaurantService;
     }
 
-    @GetMapping("/restaurants")
+    @GetMapping
     public ResponseEntity getRestaurantList() {
         List<Restaurant> restaurants = restaurantService.getAllRestaurants();
         return new ResponseEntity<>(restaurants, restaurants.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
-    @GetMapping("/restaurants/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity getRestaurantById(@PathVariable Integer id) {
         Restaurant restaurant = restaurantService.getRestaurantById(id);
         Boolean isNull = restaurant == null;
         return new ResponseEntity<>(isNull ? new Restaurant() : restaurant, isNull ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
-    @PostMapping("/restaurants")
+    @PostMapping
     public ResponseEntity<Map<String, String>> createRestaurantPosting(@Valid @RequestBody Restaurant restaurant, BindingResult bindingResult) {
         Map<String, String> errors = new HashMap<>();
 
