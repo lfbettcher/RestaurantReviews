@@ -34,15 +34,15 @@ public class RestaurantApiV1RestController {
     @GetMapping("/restaurants/{id}")
     public ResponseEntity getRestaurantById(@PathVariable Integer id) {
         Restaurant restaurant = restaurantService.getRestaurantById(id);
-        return new ResponseEntity<>(restaurant, restaurant == null ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+        Boolean isNull = restaurant == null;
+        return new ResponseEntity<>(isNull ? new Restaurant() : restaurant, isNull ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
     @PostMapping("/restaurants")
-    public ResponseEntity<Map<String, String>> createRestaurantPosting(@Valid @RequestBody Restaurant restaurant, BindingResult bindingResult){
+    public ResponseEntity<Map<String, String>> createRestaurantPosting(@Valid @RequestBody Restaurant restaurant, BindingResult bindingResult) {
         Map<String, String> errors = new HashMap<>();
 
-        //Structure errors for form and send back to React
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             List<ObjectError> errorObjects = bindingResult.getAllErrors();
             errorObjects.forEach(error -> {
                 errors.put(error.getCodes()[0].split("\\.")[2], error.getDefaultMessage());
