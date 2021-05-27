@@ -23,7 +23,7 @@ const RestaurantTile = (props) => {
       <div className="restaurants__col">
         <img className="img-link" src={imgUrl}></img>
         <div className="restaurants-container">
-          <span className="restaurants__name"><Link to={`/restaurants/${id}`} className="restaurants__name-link">{name}</Link></span>
+          <span className="restaurants__name"><Link to={`/restaurants/show/${id}`} className="restaurants__name-link">{name}</Link></span>
           <a href={websiteUrl}>Visit restaurant website</a>
           {/* <p>{websiteUrl}</p> */}
           <p>{phoneNumber}</p>
