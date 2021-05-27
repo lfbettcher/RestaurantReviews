@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Range;
 
@@ -14,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import java.security.Timestamp;
 import java.util.Date;
 
-
+@ToString
 @Getter
 @Setter
 @NoArgsConstructor
@@ -32,7 +33,7 @@ public class Review {
     private String reviewerName;
 
     @NotNull
-    @Range(min = 1, max = 6)
+    @Range(min = 1, max = 5)
     @Column(name = "star_rating", nullable = false)
     private Integer starRating;
 
