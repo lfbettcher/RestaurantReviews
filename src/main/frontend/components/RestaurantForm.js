@@ -26,10 +26,6 @@ const RestaurantForm = () => {
   }
 
   const handleSuccess = () => {
-<<<<<<< HEAD
-    // setSuccess(false)
-=======
->>>>>>> 568f0e252318d4e6d62bd606162514d454fcab87
     setSuccess(true)
   }
 
