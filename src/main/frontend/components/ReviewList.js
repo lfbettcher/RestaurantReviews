@@ -7,10 +7,12 @@ const ReviewList = (props) => {
   })
 
   return (
-    <div>
-      <h2>Reviews</h2>
-      <hr />
-      {reviewTiles}
+    <div className="review-container">
+      <span class="restaurant-title">Reviews</span>
+      {/* <hr /> */}
+      <div class="review-info">
+        {reviewTiles}
+      </div>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import RestaurantList from "./RestaurantList.js"
 import RestaurantShow from "./RestaurantShow.js"
 import RestaurantForm from "./RestaurantForm.js"
 import NotFound from "./NotFound.js"
+import AboutUs from "./AboutUs.js"
 
 const app = () => {
   return (
@@ -21,6 +22,7 @@ const app = () => {
       <Route exact path='/restaurants/new' component={RestaurantForm} />
       <Route exact path='/restaurants/show/:id' component={RestaurantShow} />
       <Route exact path='/not_found' component={NotFound} />
+      <Route exact path='/aboutus' component={AboutUs} />
     </BrowserRouter>
   )
 }
