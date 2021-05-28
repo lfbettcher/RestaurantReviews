@@ -52,87 +52,89 @@ const RestaurantForm = () => {
   }
 
   return (
-    <div className="form-main" >
+    <div className="main-content">
       <h1 className="main-title">Add a Restaurant</h1>
-      <div className="form-div">
-        <form className="form-wrapper" onSubmit={handleSubmit}>
-          <div className="form-input">
-            <TextInput
-              label='name'
-              text='Name'
-              onChange={handleChange}
-              value={values.name}
-              error={errors.name}
-            />
-          </div>
-          <div className="form-input">
-            <TextInput
-              label='imgUrl'
-              text='Image Url'
-              onChange={handleChange}
-              value={values.imgUrl}
-              error={errors.imgUrl}
-            />
-          </div>
-          <div className="form-input">
-            <TextInput
-              label='websiteUrl'
-              text='Website Url'
-              onChange={handleChange}
-              value={values.websiteUrl}
-              error={errors.websiteUrl}
-            />
-          </div>
-          <div className="form-input">
-            <TextInput
-              label='phoneNumber'
-              text='Phone'
-              onChange={handleChange}
-              value={values.phoneNumber}
-              error={errors.phoneNumber}
-            />
-          </div>
-          <div className="form-input">
-            <TextInput
-              label='address'
-              text='Address'
-              onChange={handleChange}
-              value={values.address}
-              error={errors.address}
-            />
-          </div>
-          <div className="form-input">
-            <TextInput
-              label='category'
-              text='Category'
-              onChange={handleChange}
-              value={values.category}
-              error={errors.category}
-            />
-          </div>
-          <div className="form-input">
-            <TextInput
-              label='openTime'
-              text='Opening Time'
-              onChange={handleChange}
-              value={values.openTime}
-              error={errors.openTime}
-            />
-          </div>
-          <div className="form-input">
-            <TextInput
-              label='closeTime'
-              text='Closing Time'
-              onChange={handleChange}
-              value={values.closeTime}
-              error={errors.closeTime}
-            />
-          </div>
-          <div className="form-submit">
-            <input type='submit' value='Submit' id="button-blue" />
-            <div className="ease" />
-          </div>
-        </form>
+      <div className="form-main" >
+        <div className="form-div">
+          <form className="form-wrapper" onSubmit={handleSubmit}>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='name'
+                text='Name'
+                onChange={handleChange}
+                value={values.name}
+                error={errors.name}
+              />
+            </div>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='imgUrl'
+                text='Image Url'
+                onChange={handleChange}
+                value={values.imgUrl}
+                error={errors.imgUrl}
+              />
+            </div>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='websiteUrl'
+                text='Website Url'
+                onChange={handleChange}
+                value={values.websiteUrl}
+                error={errors.websiteUrl}
+              />
+            </div>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='phoneNumber'
+                text='Phone'
+                onChange={handleChange}
+                value={values.phoneNumber}
+                error={errors.phoneNumber}
+              />
+            </div>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='address'
+                text='Address'
+                onChange={handleChange}
+                value={values.address}
+                error={errors.address}
+              />
+            </div>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='category'
+                text='Category'
+                onChange={handleChange}
+                value={values.category}
+                error={errors.category}
+              />
+            </div>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='openTime'
+                text='Opening Time'
+                onChange={handleChange}
+                value={values.openTime}
+                error={errors.openTime}
+              />
+            </div>
+            <div className="form-input form-input-container">
+              <TextInput
+                label='closeTime'
+                text='Closing Time'
+                onChange={handleChange}
+                value={values.closeTime}
+                error={errors.closeTime}
+              />
+            </div>
+            <div className="form-submit submit">
+              <input type='submit' value='Submit' id="button-blue" />
+              <div className="ease" />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   )

@@ -45,18 +45,25 @@ const RestaurantShow = (props) => {
   return redirect ? (
     <Redirect push to='/not_found' />
   ) : (
-    <div>
-      <p>{name}</p>
-      <p>{imgUrl}</p>
-      <p>{websiteUrl}</p>
-      <p>{address}</p>
-      <p>{phoneNumber}</p>
-      <p>{openTime}</p>
-      <p>{closeTime}</p>
-      <p>{category && category.name}</p>
-      {restaurant.id && <ReviewList reviews={restaurant.reviews} />}
-      {showForm && <ReviewForm restaurant={restaurant} />}
-      <button onClick={toggleForm}>Add Review</button>
+    <div className="main-content">
+      <h1 className="main-title">{name}</h1>
+      <div className="restaurant__col">
+        <img className="res-img-link" src={imgUrl} />
+        <div className="restaurant-container">
+          {websiteUrl && <span className="restaurant-title"><a href={websiteUrl} className="restaurant-title-link">Visit Restaurant Website</a></span>}
+          <div className="restaurant-info">
+            <p>{address}</p>
+            <p>{phoneNumber}</p>
+            <p>Hours: {openTime}:00 to {closeTime}:00</p>
+            <p>{_.startCase(category && category.name)}</p>
+          </div>
+        </div>
+        {restaurant.id && <ReviewList reviews={restaurant.reviews} />}
+        {showForm ? <ReviewForm restaurant={restaurant} /> : <div className="form-submit submit">
+          <button onClick={toggleForm} id="button-blue">Add Review</button>
+          <div className="ease" />
+        </div>}
+      </div>
     </div>
   )
 }

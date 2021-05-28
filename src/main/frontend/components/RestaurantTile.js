@@ -26,17 +26,17 @@ const RestaurantTile = (props) => {
       </h1>
       <img src={imgUrl} alt={name} /> */}
       <div className="restaurants__col">
-        <Link to={`/restaurants/show/${id}`} className="restaurants__name-link">
+        <Link to={`/restaurants/show/${id}`}>
           <img className="img-link" src={imgUrl} />
         </Link>
         <div className="restaurants-container">
           <span className="restaurants__name"><Link to={`/restaurants/show/${id}`} className="restaurants__name-link">{name}</Link></span>
           <StarRatingStatic starRating={roundedRating} /><br />
-          <a href={websiteUrl}>Visit restaurant website</a>
+          {websiteUrl && <span className="restaurants-website"><a href={websiteUrl} className="restaurants-website-link">Visit restaurant website</a></span>}
           <p>{phoneNumber}</p>
           <p>{address}</p>
           <p>
-            Hours: {openTime} to {closeTime}
+            Hours: {openTime}:00 to {closeTime}:00
           </p>
           <p>{_.startCase(category.name)}</p>
         </div>

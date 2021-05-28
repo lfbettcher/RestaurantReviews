@@ -55,31 +55,46 @@ const ReviewForm = (props) => {
   return success ? (
     <SuccessTile />
   ) : (
-    <form onSubmit={handleSubmit}>
-      <TextInput
-        label="reviewerName"
-        text="Name: "
-        onChange={handleChange}
-        value={values.reviewerName}
-        error={errors.reviewerName}
-      />
-      <br />
-      <StarRating
-        onChange={changeStar}
-        starRating={starRating}
-        error={errors.starRating}
-      />
-      <br />
-      <TextArea
-        label="review"
-        text="Review: "
-        onChange={handleChange}
-        value={values.review}
-        error={errors.review}
-      />
-      <br />
-      <input className="submit-btn" type="submit" value="Submit" />
-    </form>
+    <div className="review-form-div">
+      <form onSubmit={handleSubmit}>
+        <div className="review-form-input">
+          <TextInput
+            className="feedback-input"
+            label="reviewerName"
+            text="Name: "
+            onChange={handleChange}
+            value={values.reviewerName}
+            error={errors.reviewerName}
+          />
+        </div>
+        <br />
+        <div className="review-form-input">
+          <StarRating
+            className="feedback-input"
+            onChange={changeStar}
+            starRating={starRating}
+            error={errors.starRating}
+          />
+        </div>
+        <br />
+        <div className="review-form-input">
+          <TextArea
+            className="feedback-input"
+            label="review"
+            text="Review: "
+            onChange={handleChange}
+            value={values.review}
+            error={errors.review}
+          />
+        </div>
+        <br />
+        <br />
+        <div className="submit">
+          <input className="submit" type="submit" value="Submit" id="button-blue" />
+          <div className="ease" />
+        </div>
+      </form>
+    </div>
   );
 };
 
