@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import StarRatingStatic from "./StarRatingStatic";
 
 const RestaurantTile = (props) => {
   const {
@@ -12,7 +13,11 @@ const RestaurantTile = (props) => {
     openTime,
     closeTime,
     category,
+    reviews
   } = props.restaurant;
+
+  const avgRating = reviews.reduce((sum, r) => (sum + parseInt(r.starRating)), 0) / reviews.length;
+  const roundedRating = isNaN(avgRating) ? 0 : Math.round(avgRating);
 
   return (
     <>
@@ -21,17 +26,19 @@ const RestaurantTile = (props) => {
       </h1>
       <img src={imgUrl} alt={name} /> */}
       <div className="restaurants__col">
-        <img className="img-link" src={imgUrl}></img>
+        <Link to={`/restaurants/show/${id}`} className="restaurants__name-link">
+          <img className="img-link" src={imgUrl} />
+        </Link>
         <div className="restaurants-container">
           <span className="restaurants__name"><Link to={`/restaurants/show/${id}`} className="restaurants__name-link">{name}</Link></span>
+          <StarRatingStatic starRating={roundedRating} /><br />
           <a href={websiteUrl}>Visit restaurant website</a>
-          {/* <p>{websiteUrl}</p> */}
           <p>{phoneNumber}</p>
           <p>{address}</p>
           <p>
             Hours: {openTime} to {closeTime}
           </p>
-          <p>{category.name}</p>
+          <p>{_.startCase(category.name)}</p>
         </div>
       </div>
     </>
