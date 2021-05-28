@@ -40,7 +40,7 @@ export default class DBUtils {
     let formErrors = {}
     fields.forEach((field) => {
       if (values[field].trim() === "") {
-        formErrors = { ...formErrors, [field]: `${field} must be filled in.` }
+        formErrors = { ...formErrors, [field]: `${_.startCase(_.camelCase(field))} must be filled in.` }
       }
     })
 

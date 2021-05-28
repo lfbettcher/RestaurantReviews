@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 !**/src/main/frontend/node_modules
+bundle.js
 
 ### STS ###
 .apt_generated
