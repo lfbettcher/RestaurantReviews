@@ -1,0 +1,51 @@
+/* Size for the static star images */
+.star-rating-img {
+    width: 8rem;
+}
+
+/* Star Rating */
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+#rating {
+    border: 0;
+    margin-top: 10px;
+}
+
+.rate {
+    float: left;
+    height: 20px;
+}
+
+.rate:not(:checked) > input {
+    display: none;
+}
+
+.rate:not(:checked) > label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked) > label:before {
+    content: "★ ";
+}
+
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
